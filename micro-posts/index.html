@@ -135,76 +135,80 @@
 
 
         
-.project-details {
+.microposts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust minmax for card size */
+    gap: 20px;
+}
+.micropost {
     background-color: #262626;
-    padding: 30px;
+    padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
+    transition: transform 0.3s ease;
 }
-.project-details h2 {
-    color: #ffffff;
-    font-size: 2em;
-    margin-bottom: 20px;
+.micropost:hover {
+    transform: translateY(-5px);
 }
-.project-thumbnail {
-    width: 100%;
-    max-width: 600px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-.project-info p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-.project-info ul {
-    margin-bottom: 20px;
-}
-.project-info li {
+.micropost-author {
+    display: flex;
+    align-items: center;
     margin-bottom: 10px;
 }
-.project-info a {
+.micropost-author img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.micropost-author span {
+    font-size: 0.9em;
+    color: #999;
+}
+.micropost-content {
+    font-size: 1em;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+.micropost-meta {
+    font-size: 0.8em;
+    color: #666;
+    margin-bottom: 10px;
+}
+.micropost-links {
+    display: flex;
+    gap: 10px;
+}
+.micropost-links a {
     color: #e0e0e0;
     text-decoration: none;
+    font-size: 0.8em;
 }
-.project-info a:hover {
+.micropost-links a:hover {
     color: #ffffff;
 }
-.code-snippet {
-    background-color: #333;
-    padding: 15px;
-    border-radius: 4px;
-    margin-bottom: 20px;
-}
-.code-snippet pre {
-    background: none;
-    padding: 0;
-    overflow-x: auto;
-}
-.code-snippet code {
-    font-family: 'Courier New', Courier, monospace;
-    color: #e0e0e0;
-}
-.project-screenshots {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-bottom: 20px;
-}
-.project-screenshots img {
-    width: calc(33.333% - 20px);
-    max-width: 200px;
-    border-radius: 4px;
-}
-.project-links {
-    margin-top: 30px;
-}
-.project-links a {
-    display: inline-block;
-    margin-right: 20px;
-    margin-bottom: 10px;
-}
+
+
+    
+    
+
+    .paginator_links {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .paginator_links a {
+        color: #e0e0e0;
+        padding: 8px 16px;
+        text-decoration: none;
+        transition: background 0.3s;
+    }
+    .paginator_links a:hover {
+        background-color: #333;
+    }
+    .paginator_links-active {
+        background-color: #333;
+    }
+
 
     </style>
 
@@ -214,7 +218,7 @@
     
         
     
-    <title>Personal Site</title>
+    <title>µPosts</title>
 </head>
 
 <body>
@@ -223,9 +227,9 @@
                 <ul class="language-menu">
                     
                         
-                            <li><a href="https://artilugio0.github.io/en/projects/personal-site/">en</a></li>
+                            <li><a href="https://artilugio0.github.io/en/micro-posts/">en</a></li>
                         
-                            <li><a href="https://artilugio0.github.io/projects/sitio-personal/">es</a></li>
+                            <li><a href="https://artilugio0.github.io/micro-posts/">es</a></li>
                         
                     
                 </ul>
@@ -237,7 +241,7 @@
                 
 
                 <header>
-                    <h1>Projects</h1>
+                    <h1>µPosts</h1>
                     
                 </header>
         
@@ -245,24 +249,24 @@
         
         <nav class="navbar-collapse">
             <ul>
-                <li><a href="/en/">Home</a></li>
+                <li><a href="/">Home</a></li>
                 
                         
                         
                         
-                            <li><a href="https://artilugio0.github.io/en/projects/">Projects</a></li>
-                        
-                
-                        
-                        
-                        
-                            <li><a href="https://artilugio0.github.io/en/micro-posts/">µPosts</a></li>
+                            <li><a href="https://artilugio0.github.io/projects/">Proyectos</a></li>
                         
                 
                         
                         
                         
-                            <li><a href="https://artilugio0.github.io/en/about/">About Me</a></li>
+                            <li><a href="https://artilugio0.github.io/micro-posts/">µPosts</a></li>
+                        
+                
+                        
+                        
+                        
+                            <li><a href="https://artilugio0.github.io/about/">Acerca de mi</a></li>
                         
                 
             </ul>
@@ -270,61 +274,41 @@
         </nav>
 
       
-<section class="project-details">
-    <div class="project-info">
-        <h2>Personal Site</h2>
-        <img src="https://artilugio0.github.io/en/projects/personal-site//image.jpg" alt="Personal Site Thumbnail" class="project-thumbnail">
-        
-            <p><strong>Overview:</strong> Personal site built with Zola, with a theme created from scratch using AI</p>
-        
 
-        
-            <p><strong>Key features:</strong></p>
-            <ul>
-            
-                <li>Multi-language</li>
-            
-                <li>Static site</li>
-            
-            </ul>
-        
+    
+    
 
-        
-            <p><strong>Tech stack:</strong></p>
-            <ul>
-            
-                <li>HTML</li>
-            
-                <li>CSS</li>
-            
-                <li>JavaScript</li>
-            
-                <li>Zola</li>
-            
-                <li>Grok</li>
-            
-            </ul>
-        
 
-        
-            <p><strong>Status:</strong> Finished</p>
-        
-
-        
-
-        
-            <p><strong>Challenges:</strong> This site was used as a test to learn how to use AI in the development of an application. The main challenges were related to generating correct code and maintaining the context of the prompts to get relevant responses for the site&#x27;s development.</p>
-        
-
-        <div class="project-links">
-            <a href="https:&#x2F;&#x2F;github.com&#x2F;artilugio0&#x2F;blog" target="_blank">Github repository</a>
-            
-                <a href="https:&#x2F;&#x2F;artilugio0.github.io" target="_blank">Live demo</a>
-            
-            
-        </div>
-    </div>
+<section class="microposts">
+    
+    <article class="micropost" onclick="location.href='https://artilugio0.github.io/micro-posts/static-site-with-zola-using-grok/'">
+            <div>
+                <div class="micropost-author">
+                    <img src="https://artilugio0.github.io/micro-posts//image.jpg" alt="@artilugio0">
+                    <span>@artilugio0 - 2025-02-01</span>
+                </div>
+                <p class="micropost-content"><p>Estuve creando un sitio estático con Zola y aprendiendo a generar código utilizando IA. La mayor parte del HTML, CSS y JS fue generado por Grok.</p>
+<p>Está bastante vacío, a medida que vaya agregando contenido, se va a ver más completo y con más secciones:</p>
+<p>https://artilugio0.github.io</p>
+</p>
+                <div class="micropost-links">
+                    
+                        <a href="https:&#x2F;&#x2F;x.com&#x2F;artilugio0&#x2F;status&#x2F;1885786671699865906" target="_blank">X</a>
+                    
+                    
+                    
+                </div>
+            </div>
+    </article>
+    
 </section>
+
+
+    
+    
+
+    
+
 
 
         <footer>

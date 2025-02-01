@@ -19,10 +19,17 @@
         <loc>https://artilugio0.github.io/en/micro-posts/</loc>
     </url>
     <url>
+        <loc>https://artilugio0.github.io/en/micro-posts/static-site-with-zola-using-grok/</loc>
+        <lastmod>2025-02-01</lastmod>
+    </url>
+    <url>
         <loc>https://artilugio0.github.io/en/platform/</loc>
     </url>
     <url>
         <loc>https://artilugio0.github.io/en/platform/github/</loc>
+    </url>
+    <url>
+        <loc>https://artilugio0.github.io/en/platform/x/</loc>
     </url>
     <url>
         <loc>https://artilugio0.github.io/en/projects/</loc>
@@ -56,10 +63,20 @@
         <loc>https://artilugio0.github.io/en/videos/</loc>
     </url>
     <url>
+        <loc>https://artilugio0.github.io/micro-posts/</loc>
+    </url>
+    <url>
+        <loc>https://artilugio0.github.io/micro-posts/static-site-with-zola-using-grok/</loc>
+        <lastmod>2025-02-01</lastmod>
+    </url>
+    <url>
         <loc>https://artilugio0.github.io/platform/</loc>
     </url>
     <url>
         <loc>https://artilugio0.github.io/platform/github/</loc>
+    </url>
+    <url>
+        <loc>https://artilugio0.github.io/platform/x/</loc>
     </url>
     <url>
         <loc>https://artilugio0.github.io/projects/</loc>
