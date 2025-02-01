@@ -3,7 +3,7 @@
 
 <head>
   <style>
-	body {
+        body {
             background-color: #1a1a1a;
             color: #e0e0e0;
             font-family: 'Roboto', sans-serif;
@@ -31,7 +31,7 @@
             border-radius: 4px;
             display: flex;
             justify-content: center;
-	    flex-direction: row;
+            flex-direction: row;
         }
         nav ul {
             list-style-type: none;
@@ -54,18 +54,18 @@
         @media (max-width: 600px) {
             nav {
                 flex-direction: column;
-	    }
+            }
             nav ul {
                 flex-direction: column;
                 align-items: center;
-		display: none;
+                display: none;
             }
-	    .navbar-toggle {
-	        display: block;
-	    }
-	    .navbar-show {
-	        display: flex;
-	    }
+            .navbar-toggle {
+                display: block;
+            }
+            .navbar-show {
+                display: flex;
+            }
         }
         nav a {
             color: #e0e0e0;
@@ -294,7 +294,11 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Blog</title>
+    
+    
+        
+    
+    <title>Artilugio</title>
 </head>
 
 <body>
@@ -311,26 +315,26 @@
                 </ul>
         
 
-	
-		
-			
-		
+        
+                
+                        
+                
 
-		<header>
-		    <h1>Artilugio</h1>
-		    
-			<p>Aqui podras encontrar mis proyectos, blog posts, streams, videos, tweets y cualquier otra cosa que quiera compartir
-		    
-		</header>
-	
+                <header>
+                    <h1>Artilugio</h1>
+                    
+                        <p>Aqui podras encontrar mis proyectos, blog posts, streams, videos, tweets y cualquier otra cosa que quiera compartir
+                    
+                </header>
+        
 
-	
+        
         <nav class="navbar-collapse">
             <ul>
                 <li><a href="/">Home</a></li>
-		
+                
             </ul>
-	    <button class="navbar-toggle" onclick="toggleNav()">☰</button>
+            <button class="navbar-toggle" onclick="toggleNav()">☰</button>
         </nav>
 
       
@@ -377,12 +381,12 @@
       <script>
         function toggleNav() {
           document.querySelector('.navbar-collapse ul').classList.toggle('navbar-show');
-	  let toggleButton = document.querySelector('.navbar-toggle');
-	  if (toggleButton.innerHTML != "^") {
-		toggleButton.innerHTML = "^";
-	  } else {
-		toggleButton.innerHTML = "☰"
-	  }
+          let toggleButton = document.querySelector('.navbar-toggle');
+          if (toggleButton.innerHTML != "^") {
+                toggleButton.innerHTML = "^";
+          } else {
+                toggleButton.innerHTML = "☰"
+          }
         }
       </script>
 </body>
