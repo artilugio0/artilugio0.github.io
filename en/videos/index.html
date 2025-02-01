@@ -135,160 +135,105 @@
 
 
         
-.latest-posts {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 380px)); /* Ensures each column doesn't exceed 400px */
-    gap: 20px;
-    justify-content: center; /* Centers grid items in the main axis */
+.youtube-section {
+    margin-bottom: 40px;
 }
-.post {
+.toggle-buttons {
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.toggle-buttons button {
+    background-color: #333;
+    color: #e0e0e0;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.toggle-buttons button.active {
+    background-color: #4a4a4a;
+}
+.toggle-buttons button:hover {
+    background-color: #404040;
+}
+.channel {
     background-color: #262626;
-    padding: 15px; /* Slightly reduced padding to fit within 400px */
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    max-width: 400px; /* Ensures the post doesn't exceed 400px */
+    margin-bottom: 20px;
+    display: none;
 }
-.post:hover {
-    transform: translateY(-5px);
+.channel.show {
+    display: block;
 }
-.post h2 {
+.channel h2 {
+    color: #ffffff;
     font-size: 1.5em;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+}
+.channel h2 a {
+    text-decoration: none;
     color: #ffffff;
 }
-.post img {
-    max-width: 100%;  /* Image will not exceed the width of its container */
-    height: auto;     /* Maintains aspect ratio */
+.video-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.video {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    color: #e0e0e0;
+    transition: color 0.3s ease;
+}
+.video:hover {
+    color: #ffffff;
+}
+.video img {
+    width: 120px;
+    height: auto;
     border-radius: 4px;
-    margin-bottom: 10px;
-    display: block;
-    margin-left: auto; 
-    margin-right: auto;
+}
+.video-info {
+    flex: 1;
+}
+.video-info h3 {
+    margin: 0 0 5px 0;
+    font-size: 1em;
+}
+.video-info p {
+    margin: 0;
+    font-size: 0.9em;
+}
+.channel-links {
+    margin-top: 20px;
+}
+.channel-links a {
+    color: #e0e0e0;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+}
+.channel-links a:hover {
+    color: #ffffff;
 }
 
+.video-description {
+    display: block;
+}
 
-    
-    
-
-    .pages-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 380px)); /* Ensures each column doesn't exceed 400px */
-        gap: 20px;
-        justify-content: center; /* Centers grid items in the main axis */
+@media screen and (max-width: 768px) {
+    .video-description {
+        display: none;
     }
-
-    .pages-grid-item {
-        background-color: #262626;
-        padding: 15px; /* Slightly reduced padding to fit within 400px */
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-        max-width: 400px;
-    }
-
-    .pages-grid-item:hover {
-        transform: translateY(-5px);
-    }
-
-    .pages-grid-item a {
-        text-decoration: none;
-    }
-
-    .pages-grid-item h3 {
-        font-size: 1.5em;
-        margin-bottom: 10px;
-        color: #ffffff;
-    }
-
-    .pages-grid-item img {
-        max-width: 100%;  /* Image will not exceed the width of its container */
-        height: auto;     /* Maintains aspect ratio */
-        border-radius: 4px;
-        margin-bottom: 10px;
-        display: block;
-        margin-left: auto; 
-        margin-right: auto;
-    }
-
-    
-    
-
-    .microposts-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust minmax for card size */
-        gap: 20px;
-    }
-    .microposts-grid {
-        background-color: #262626;
-        padding: 15px;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-    }
-    .microposts-grid:hover {
-        transform: translateY(-5px);
-    }
-    .microposts-grid-author {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-    }
-    .microposts-grid-author img {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        margin-right: 10px;
-    }
-    .microposts-grid-author span {
-        font-size: 0.9em;
-        color: #999;
-    }
-    .microposts-grid-content {
-        font-size: 1em;
-        line-height: 1.4;
-        margin-bottom: 10px;
-    }
-    .microposts-grid-meta {
-        font-size: 0.8em;
-        color: #666;
-        margin-bottom: 10px;
-    }
-    .microposts-grid-links {
-        display: flex;
-        gap: 10px;
-    }
-    .microposts-grid-links a {
-        color: #e0e0e0;
-        text-decoration: none;
-        font-size: 0.8em;
-    }
-    .microposts-grid-links a:hover {
-        color: #ffffff;
-    }
-
-    
-    
-    
-
-    .paginator_links {
-        text-align: center;
-        margin-top: 20px;
-    }
-    .paginator_links a {
-        color: #e0e0e0;
-        padding: 8px 16px;
-        text-decoration: none;
-        transition: background 0.3s;
-    }
-    .paginator_links a:hover {
-        background-color: #333;
-    }
-    .paginator_links-active {
-        background-color: #333;
-    }
-
-
+}
 
     </style>
 
@@ -298,21 +243,11 @@
     
         
     
-    <title>Artilugio</title>
+    <title>Videos</title>
 </head>
 
 <body>
     <div class="container">
-        
-                <ul class="language-menu">
-                    
-                        
-                            <li><a href="https://artilugio0.github.io/en/">en</a></li>
-                        
-                            <li><a href="https://artilugio0.github.io/">es</a></li>
-                        
-                    
-                </ul>
         
 
         
@@ -321,9 +256,7 @@
                 
 
                 <header>
-                    <h1>Artilugio</h1>
-                    
-                        <p>Here you can find my projects, blog posts, Twitch streams, YouTube videos, Tweets and anything else I&#x27;d like to share
+                    <h1>Videos</h1>
                     
                 </header>
         
@@ -348,71 +281,13 @@
         </nav>
 
       
-
-
-
-
-
-
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-
-    
-    
-
-
-
-
-
-    <p>No content available yet</p>
-
-
-    
+<section class="youtube-section">
+        <div class="toggle-buttons">
         
-            
-            
-        
-    
+    </div>
 
     
-    
-
-    <section class="pages-grid">
-        
-    </section>
-
-    
-    
-    
-
-    
-
-
-
+</section>
 
 
         <footer>
@@ -420,6 +295,40 @@
         </footer>
 
       
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const toggleButtons = document.querySelectorAll('.toggle-button');
+        const channels = document.querySelectorAll('.channel');
+
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const channel = this.dataset.channel;
+                if (this.classList.contains('active')) {
+                    this.classList.remove('active');
+                    channels.forEach(channelDiv => {
+                        if (!channelDiv.classList.contains('show')) {
+                            channelDiv.classList.add('show');
+                        }
+                    });
+                    return;
+                }
+
+                // show all
+                channels.forEach(channelDiv => {
+                    if (channelDiv.dataset.channel === channel && !channelDiv.classList.contains('show')) {
+                        channelDiv.classList.add('show');
+                    } else if (channelDiv.dataset.channel !== channel) {
+                        channelDiv.classList.remove('show');
+                    }
+                });
+
+                toggleButtons.forEach(button => button.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    });
+</script>
+
       <script>
         function toggleNav() {
           document.querySelector('.navbar-collapse ul').classList.toggle('navbar-show');

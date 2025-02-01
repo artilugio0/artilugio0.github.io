@@ -135,38 +135,77 @@
 
 
         
-.latest-posts {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 380px)); /* Ensures each column doesn't exceed 400px */
-    gap: 20px;
-    justify-content: center; /* Centers grid items in the main axis */
-}
-.post {
-    background-color: #262626;
-    padding: 15px; /* Slightly reduced padding to fit within 400px */
+.schedule {
+    background: #262626;
+    padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    max-width: 400px; /* Ensures the post doesn't exceed 400px */
+    margin-bottom: 40px;
 }
-.post:hover {
-    transform: translateY(-5px);
-}
-.post h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+.schedule h2 {
     color: #ffffff;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    cursor: pointer; /* Cursor changes to pointer to indicate clickable */
 }
-.post img {
-    max-width: 100%;  /* Image will not exceed the width of its container */
-    height: auto;     /* Maintains aspect ratio */
-    border-radius: 4px;
-    margin-bottom: 10px;
-    display: block;
-    margin-left: auto; 
-    margin-right: auto;
+.schedule table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.schedule th, .schedule td {
+    border: 1px solid #666;
+    padding: 10px;
+    text-align: left;
+}
+.schedule th {
+    background: #333;
 }
 
+/* Responsive Table Styles */
+@media screen and (max-width: 600px) {
+    .schedule table, .schedule thead, .schedule tbody, .schedule th, .schedule td, .schedule tr {
+        display: block;
+    }
+    .schedule thead { 
+        display: none; 
+    }
+    .schedule tr {
+        margin-bottom: 15px;
+    }
+    .schedule td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+    }
+    .schedule td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        content: attr(data-label);
+        font-weight: bold;
+        text-align: left;
+    }
+    .schedule td:last-child {
+        border-bottom: 1px solid #444;
+    }
+
+    /* Modified for toggle functionality on mobile */
+    .schedule table {
+        display: none; /* Initially hide the table on mobile */
+    }
+    .schedule.show table {
+        display: block; /* Show when toggled */
+    }
+    .schedule h2::after {
+        content: "▼"; /* Down arrow when closed */
+        float: right;
+    }
+    .schedule.show h2::after {
+        content: "▲"; /* Up arrow when open */
+    }
+}
 
     
     
@@ -298,21 +337,11 @@
     
         
     
-    <title>Artilugio</title>
+    <title>Streams</title>
 </head>
 
 <body>
     <div class="container">
-        
-                <ul class="language-menu">
-                    
-                        
-                            <li><a href="https://artilugio0.github.io/en/">en</a></li>
-                        
-                            <li><a href="https://artilugio0.github.io/">es</a></li>
-                        
-                    
-                </ul>
         
 
         
@@ -321,9 +350,7 @@
                 
 
                 <header>
-                    <h1>Artilugio</h1>
-                    
-                        <p>Here you can find my projects, blog posts, Twitch streams, YouTube videos, Tweets and anything else I&#x27;d like to share
+                    <h1>Streams</h1>
                     
                 </header>
         
@@ -348,47 +375,41 @@
         </nav>
 
       
-
-
-
-
-
-
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-
-    
-    
-
-
-
-
-
-    <p>No content available yet</p>
+<section class="schedule">
+    <h2>Schedule</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Day</th>
+                <th>Time</th>
+                <th>Platforms</th>
+                <th>Topics</th>
+            </tr>
+        </thead>
+        
+            <tr>
+                <td data-label="Day">Monday</td>
+                <td data-label="Time (PST)">7:00 PM - 9:00 PM</td>
+                <td data-label="Platform">Twitch</td>
+                <td data-label="Topic">Introduction to Game Development</td>
+            </tr>
+        
+            <tr>
+                <td data-label="Day">Wednesday</td>
+                <td data-label="Time (PST)">6:00 PM - 8:00 PM</td>
+                <td data-label="Platform">YouTube</td>
+                <td data-label="Topic">Advanced Data Structures</td>
+            </tr>
+        
+            <tr>
+                <td data-label="Day">Friday</td>
+                <td data-label="Time (PST)">5:00 PM - 7:00 PM</td>
+                <td data-label="Platform">Twitch</td>
+                <td data-label="Topic">Bitcoin Mining 101</td>
+            </tr>
+        
+    </table>
+</section>
 
 
     
@@ -414,12 +435,22 @@
 
 
 
-
         <footer>
             <p>&copy; 2025 - Artilugio </p>
         </footer>
 
       
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const scheduleSection = document.querySelector('.schedule');
+            const scheduleHeader = scheduleSection.querySelector('h2');
+
+            scheduleHeader.addEventListener('click', function() {
+                scheduleSection.classList.toggle('show');
+            });
+        });
+    </script>
+
       <script>
         function toggleNav() {
           document.querySelector('.navbar-collapse ul').classList.toggle('navbar-show');

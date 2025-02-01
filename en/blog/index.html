@@ -135,136 +135,133 @@
 
 
         
-.latest-posts {
+/* Blog Section Styles */
+/* Blog Posts Listing Styles */
+.blog-posts {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 380px)); /* Ensures each column doesn't exceed 400px */
-    gap: 20px;
-    justify-content: center; /* Centers grid items in the main axis */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
-.post {
+.blog-post-item {
     background-color: #262626;
-    padding: 15px; /* Slightly reduced padding to fit within 400px */
+    padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    max-width: 400px; /* Ensures the post doesn't exceed 400px */
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px
 }
-.post:hover {
+.blog-post-item:hover {
     transform: translateY(-5px);
 }
-.post h2 {
+.blog-post-item img {
+    width: 200px; /* Limited width */
+    height: auto;
+    border-radius: 4px;
+    margin-right: 20px; /* Space between image and text */
+}
+.blog-post-item .post-content {
+    flex: 1; /* Allow text to take up remaining space */
+}
+.blog-post-item h2 {
+    color: #ffffff;
     font-size: 1.5em;
+    margin-top: 0;
     margin-bottom: 10px;
+}
+.blog-post-item p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+.blog-post-item a {
+    color: #e0e0e0;
+    text-decoration: none;
+}
+.blog-post-item a:hover {
     color: #ffffff;
 }
-.post img {
-    max-width: 100%;  /* Image will not exceed the width of its container */
-    height: auto;     /* Maintains aspect ratio */
-    border-radius: 4px;
-    margin-bottom: 10px;
-    display: block;
-    margin-left: auto; 
-    margin-right: auto;
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+    .blog-post-item {
+        flex-direction: column; /* Stack image above text */
+    }
+    .blog-post-item img {
+        width: 100%; /* Full width on smaller screens */
+        margin-right: 0; /* No right margin when stacked */
+        margin-bottom: 20px; /* Space below image before text */
+    }
+}
+
+.pagination-blog {
+    text-align: center;
+    margin-top: 20px;
+}
+.pagination-blog a {
+    color: #e0e0e0;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+.pagination-blog a:hover {
+    background-color: #333;
 }
 
 
     
     
 
-    .pages-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 380px)); /* Ensures each column doesn't exceed 400px */
-        gap: 20px;
-        justify-content: center; /* Centers grid items in the main axis */
-    }
-
-    .pages-grid-item {
-        background-color: #262626;
-        padding: 15px; /* Slightly reduced padding to fit within 400px */
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-        max-width: 400px;
-    }
-
-    .pages-grid-item:hover {
-        transform: translateY(-5px);
-    }
-
-    .pages-grid-item a {
-        text-decoration: none;
-    }
-
-    .pages-grid-item h3 {
-        font-size: 1.5em;
-        margin-bottom: 10px;
-        color: #ffffff;
-    }
-
-    .pages-grid-item img {
-        max-width: 100%;  /* Image will not exceed the width of its container */
-        height: auto;     /* Maintains aspect ratio */
-        border-radius: 4px;
-        margin-bottom: 10px;
-        display: block;
-        margin-left: auto; 
-        margin-right: auto;
-    }
-
-    
-    
-
-    .microposts-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust minmax for card size */
-        gap: 20px;
-    }
-    .microposts-grid {
+    .pages-list-item {
         background-color: #262626;
         padding: 15px;
         border-radius: 8px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease;
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 20px
     }
-    .microposts-grid:hover {
+    .pages-list-item:hover {
         transform: translateY(-5px);
     }
-    .microposts-grid-author {
-        display: flex;
-        align-items: center;
+    .pages-list-item img {
+        width: 200px; /* Limited width */
+        height: auto;
+        border-radius: 4px;
+        margin-right: 20px; /* Space between image and text */
+    }
+    .pages-list-item .post-content {
+        flex: 1; /* Allow text to take up remaining space */
+    }
+    .pages-list-item h2 {
+        color: #ffffff;
+        font-size: 1.5em;
+        margin-top: 0;
         margin-bottom: 10px;
     }
-    .microposts-grid-author img {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        margin-right: 10px;
+    .pages-list-item p {
+        font-size: 1.1em;
+        line-height: 1.6;
     }
-    .microposts-grid-author span {
-        font-size: 0.9em;
-        color: #999;
-    }
-    .microposts-grid-content {
-        font-size: 1em;
-        line-height: 1.4;
-        margin-bottom: 10px;
-    }
-    .microposts-grid-meta {
-        font-size: 0.8em;
-        color: #666;
-        margin-bottom: 10px;
-    }
-    .microposts-grid-links {
-        display: flex;
-        gap: 10px;
-    }
-    .microposts-grid-links a {
+    .pages-list-item a {
         color: #e0e0e0;
         text-decoration: none;
-        font-size: 0.8em;
     }
-    .microposts-grid-links a:hover {
+    .pages-list-item a:hover {
         color: #ffffff;
+    }
+
+    /* Responsive design for smaller screens */
+    @media screen and (max-width: 768px) {
+        .pages-list-item {
+            flex-direction: column; /* Stack image above text */
+        }
+        .pages-list-item img {
+            width: 100%; /* Full width on smaller screens */
+            margin-right: 0; /* No right margin when stacked */
+            margin-bottom: 20px; /* Space below image before text */
+        }
     }
 
     
@@ -298,21 +295,11 @@
     
         
     
-    <title>Artilugio</title>
+    <title>Blog</title>
 </head>
 
 <body>
     <div class="container">
-        
-                <ul class="language-menu">
-                    
-                        
-                            <li><a href="https://artilugio0.github.io/en/">en</a></li>
-                        
-                            <li><a href="https://artilugio0.github.io/">es</a></li>
-                        
-                    
-                </ul>
         
 
         
@@ -321,9 +308,7 @@
                 
 
                 <header>
-                    <h1>Artilugio</h1>
-                    
-                        <p>Here you can find my projects, blog posts, Twitch streams, YouTube videos, Tweets and anything else I&#x27;d like to share
+                    <h1>Blog</h1>
                     
                 </header>
         
@@ -348,61 +333,21 @@
         </nav>
 
       
+<section>
 
-
-
-
-
-
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-
-    
-    
-
-
-
-
-
-    <p>No content available yet</p>
+</section>
 
 
     
         
-            
-            
         
     
 
     
     
 
-    <section class="pages-grid">
-        
+    <section>
+    
     </section>
 
     

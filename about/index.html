@@ -135,160 +135,44 @@
 
 
         
-.latest-posts {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 380px)); /* Ensures each column doesn't exceed 400px */
+/* About Me Styles */
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
     gap: 20px;
-    justify-content: center; /* Centers grid items in the main axis */
 }
-.post {
-    background-color: #262626;
-    padding: 15px; /* Slightly reduced padding to fit within 400px */
+.about-image {
+    flex: 1 1 200px;
+    max-width: 300px;
+}
+.about-image img {
+    width: 100%;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    max-width: 400px; /* Ensures the post doesn't exceed 400px */
 }
-.post:hover {
-    transform: translateY(-5px);
+.about-text {
+    flex: 2 1 300px;
 }
-.post h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+.about-text h2 {
+    color: #ffffff;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+.about-text p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+.contact-info {
+    margin-top: 30px;
+}
+.contact-info a {
+    color: #e0e0e0;
+    text-decoration: none;
+    margin-right: 15px;
+}
+.contact-info a:hover {
     color: #ffffff;
 }
-.post img {
-    max-width: 100%;  /* Image will not exceed the width of its container */
-    height: auto;     /* Maintains aspect ratio */
-    border-radius: 4px;
-    margin-bottom: 10px;
-    display: block;
-    margin-left: auto; 
-    margin-right: auto;
-}
-
-
-    
-    
-
-    .pages-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 380px)); /* Ensures each column doesn't exceed 400px */
-        gap: 20px;
-        justify-content: center; /* Centers grid items in the main axis */
-    }
-
-    .pages-grid-item {
-        background-color: #262626;
-        padding: 15px; /* Slightly reduced padding to fit within 400px */
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-        max-width: 400px;
-    }
-
-    .pages-grid-item:hover {
-        transform: translateY(-5px);
-    }
-
-    .pages-grid-item a {
-        text-decoration: none;
-    }
-
-    .pages-grid-item h3 {
-        font-size: 1.5em;
-        margin-bottom: 10px;
-        color: #ffffff;
-    }
-
-    .pages-grid-item img {
-        max-width: 100%;  /* Image will not exceed the width of its container */
-        height: auto;     /* Maintains aspect ratio */
-        border-radius: 4px;
-        margin-bottom: 10px;
-        display: block;
-        margin-left: auto; 
-        margin-right: auto;
-    }
-
-    
-    
-
-    .microposts-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust minmax for card size */
-        gap: 20px;
-    }
-    .microposts-grid {
-        background-color: #262626;
-        padding: 15px;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-    }
-    .microposts-grid:hover {
-        transform: translateY(-5px);
-    }
-    .microposts-grid-author {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-    }
-    .microposts-grid-author img {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        margin-right: 10px;
-    }
-    .microposts-grid-author span {
-        font-size: 0.9em;
-        color: #999;
-    }
-    .microposts-grid-content {
-        font-size: 1em;
-        line-height: 1.4;
-        margin-bottom: 10px;
-    }
-    .microposts-grid-meta {
-        font-size: 0.8em;
-        color: #666;
-        margin-bottom: 10px;
-    }
-    .microposts-grid-links {
-        display: flex;
-        gap: 10px;
-    }
-    .microposts-grid-links a {
-        color: #e0e0e0;
-        text-decoration: none;
-        font-size: 0.8em;
-    }
-    .microposts-grid-links a:hover {
-        color: #ffffff;
-    }
-
-    
-    
-    
-
-    .paginator_links {
-        text-align: center;
-        margin-top: 20px;
-    }
-    .paginator_links a {
-        color: #e0e0e0;
-        padding: 8px 16px;
-        text-decoration: none;
-        transition: background 0.3s;
-    }
-    .paginator_links a:hover {
-        background-color: #333;
-    }
-    .paginator_links-active {
-        background-color: #333;
-    }
-
-
 
     </style>
 
@@ -298,7 +182,7 @@
     
         
     
-    <title>Artilugio</title>
+    <title>Acerca de mi</title>
 </head>
 
 <body>
@@ -307,9 +191,9 @@
                 <ul class="language-menu">
                     
                         
-                            <li><a href="https://artilugio0.github.io/en/">en</a></li>
+                            <li><a href="https://artilugio0.github.io/en/about/">en</a></li>
                         
-                            <li><a href="https://artilugio0.github.io/">es</a></li>
+                            <li><a href="https://artilugio0.github.io/about/">es</a></li>
                         
                     
                 </ul>
@@ -321,9 +205,7 @@
                 
 
                 <header>
-                    <h1>Artilugio</h1>
-                    
-                        <p>Here you can find my projects, blog posts, Twitch streams, YouTube videos, Tweets and anything else I&#x27;d like to share
+                    <h1>Acerca de mi</h1>
                     
                 </header>
         
@@ -331,7 +213,7 @@
         
         <nav class="navbar-collapse">
             <ul>
-                <li><a href="/en/">Home</a></li>
+                <li><a href="/">Home</a></li>
                 
                         
                         
@@ -340,7 +222,7 @@
                         
                         
                         
-                            <li><a href="https://artilugio0.github.io/en/about/">About Me</a></li>
+                            <li><a href="https://artilugio0.github.io/about/">Acerca de mi</a></li>
                         
                 
             </ul>
@@ -348,71 +230,31 @@
         </nav>
 
       
+<section class="about-content">
+    <div class="about-image">
+        <img src="/images/about-me-photo.jpg" alt="Artilugio">
+    </div>
+    <div class="about-text">
+        <h2>Artilugio</h2>
+        <p>¡Hola! Soy Artilugio, un apasionado programador con un gran interés en seguridad, matemáticas y criptografía. He estado involucrado en la comunidad tecnológica profesionalmente durante más de 15 años, tiempo en el cual he desarrollado mis habilidades en desarrollo backend, seguridad de aplicaciones y entornos cloud, criptografía e infraestructura.</p>
+<p>Me encanta compartir mi conocimiento, por eso mi objetivo es usar mi blog, streams y videos para hacer que temas complejos sean accesibles para todos.</p>
+<p>Cuando no estoy programando o aprendiendo, disfruto de tocar la guitarra, ejercitar y leer.</p>
+<p>Siempre estoy interesado en charlar sobre cualquier tema de tecnología y ansioso por aprender sobre nuevos temas.</p>
 
-
-
-
-
-
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-
-    
-    
-
-
-
-
-
-    <p>No content available yet</p>
-
-
-    
-        
+        <div class="contact-info">
+            
+                <a href="mailto:artilugio0@proton.me">Email</a>
             
             
-        
-    
-
-    
-    
-
-    <section class="pages-grid">
-        
-    </section>
-
-    
-    
-    
-
-    
-
-
-
+                <a href="https:&#x2F;&#x2F;x.com&#x2F;artilugio0" target="_blank">X</a>
+            
+            
+            
+                <a href="https:&#x2F;&#x2F;github.com&#x2F;artilugio0" target="_blank">GitHub</a>
+            
+        </div>
+    </div>
+</section>
 
 
         <footer>
